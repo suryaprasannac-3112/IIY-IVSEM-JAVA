@@ -1,28 +1,30 @@
-class Student {
-
-    int id;
-    String name;
+public class Student {
+    private int id;
+    private String name;
 
     // Default constructor
-    Student() {
-        id = 0;
-        name = "Unknown";
-        System.out.println("Default Constructor Called");
-        System.out.println("ID: " + id);
-        System.out.println("Name: " + name);
+    public Student() {
+        this.id = 0;
+        this.name = "Unknown";
     }
 
     // Parameterized constructor
-    Student(int i, String n) {
-        id = i;
-        name = n;
-        System.out.println("Parameterized Constructor Called");
-        System.out.println("ID: " + id);
-        System.out.println("Name: " + name);
+    public Student(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public void display() {
+        System.out.println("ID: " + id + ", Name: " + name);
     }
 
     public static void main(String[] args) {
-        Student s1 = new Student();        // default constructor
-        Student s2 = new Student(101, "Prasanna"); // parameterized constructor
+        Student s1 = new Student();
+        Student s2 = new Student(101, "Prasanna");
+        
+        System.out.println("Student 1 Details:");
+        s1.display();
+        System.out.println("Student 2 Details:");
+        s2.display();
     }
 }
